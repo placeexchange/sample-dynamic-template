@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script id="template-vars">
+            const LATITUDE = parseFloat("{{ lat }}");
+            const LONGITUDE = parseFloat("{{ lon }}");
+            const SLOT_H = parseInt("{{ slot_h }}", 10) || document.body.clientHeight;
+            const SLOT_W = parseInt("{{ slot_w }}", 10) || document.body.clientWidth;
+        </script>
+    </body>
+</html>
