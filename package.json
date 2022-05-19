@@ -1,0 +1,21 @@
+{
+  "name": "sample-dynamic-template",
+  "version": "1.0.0",
+  "description": "This repo provides a representative sample of a templated HTML5 dynamic creative that can run via Place Exchange. The sample template will dynamically render based on geolocation (a `lat/lon` pair) and the time of day, and it is intended to be used as an illustrative development guide.",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/placeexchange/sample-dynamic-template.git"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/placeexchange/sample-dynamic-template/issues"
+  },
+  "homepage": "https://github.com/placeexchange/sample-dynamic-template#readme",
+  "devDependencies": {
+    "jest": "^28.1.0",
+    "jsdom": "^19.0.0"
+  }
+}
