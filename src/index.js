@@ -11,6 +11,7 @@ const createStudioItem = (studio) => {
 
     const studioName = document.createElement('h2');
     studioName.innerText = studio.properties.name;
+    studioName.className = 'studio-name';
     studioItem.appendChild(studioName);
 
     const studioDetails = document.createElement('div');
@@ -20,11 +21,13 @@ const createStudioItem = (studio) => {
     addressContainer.className = 'address-container';
     const addressComponents = studio.properties.address_components;
     const streetAddress = document.createElement('p');
-    const streetCityStatePostal = document.createElement('p');
+    const cityStatePostal = document.createElement('p');
     streetAddress.innerText = addressComponents.address;
-    streetCityStatePostal.innerText = `${addressComponents.city}, ${addressComponents.province}, ${addressComponents.postal_code}`
+    streetAddress.className = 'street-address';
+    cityStatePostal.innerText = `${addressComponents.city}, ${addressComponents.province}, ${addressComponents.postal_code}`;
+    cityStatePostal.className = 'city-state-postal';
     addressContainer.appendChild(streetAddress);
-    addressContainer.appendChild(streetCityStatePostal);
+    addressContainer.appendChild(cityStatePostal);
     studioDetails.append(addressContainer);
 
     const proximityContainer = document.createElement('div');
@@ -102,6 +105,7 @@ const setStudioData = async () => {
 const setLastUpdated = () => {
     const lastUpdated = document.createElement('p');
     lastUpdated.innerText = `Sample Dynamic Template generated at:\n ${new Date()}`
+    lastUpdated.className = 'last-update-text';
     const lastUpdatedContainer = document.querySelector('.last-update-container');
     lastUpdatedContainer.appendChild(lastUpdated);
 }

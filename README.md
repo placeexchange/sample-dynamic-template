@@ -28,6 +28,8 @@ The sample template is developed as HTML bundled with CSS/JS and assets, all vie
 To view the sample template, simply run `open src/index.html`.
 * While the sample template uses template variables, it uses fallback default values if template variables are not dynamically replaced.
 * Please bear in mind this template is intended to be rendered with a 16:9 aspect ratio, so ensure your browser dimensions are as such to properly view the sample creative.
+
+To test the sample creative, simply run `npm install` and `npm test` in the root directory.
 ## Developing a Dynamic Template
 
 This repository provides a sample template (at `src/index.html`) that can be used as an illustrative reference for how a dynamic template can be prepared for execution with Place Exchange.
