@@ -36,6 +36,8 @@ This repository provides a sample template (at `src/index.html`) that can be use
 
 Additionally, a base template (at `base.html`) can be used as a starting point for development of a dynamic creative template. This base template contains the full list of supported template variables; developers may select whichever variables are needed for a given use case.
 
+If the template has external dependencies, PX recommends using default fallback content in case any of the external dependencies fail (e.g., cannot connect to the internet, API services are unavailable). That way, an appropriate default creative can still be reliably displayed in the event of an dependency failure.
+
 ### Template Limitations
 Please bear in mind the following limitations:
 
