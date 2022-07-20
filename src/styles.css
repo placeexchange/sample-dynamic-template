@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Montserrat';
-    src: url('assets/Montserrat-Regular.ttf');
+    src: url('https://pxba-px-mabe-dynamicsnapshots.s3.amazonaws.com/dynamic-test/assets/Montserrat-Regular.ttf');
 }
 
 html, body {

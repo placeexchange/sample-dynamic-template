@@ -34,7 +34,7 @@ const createStudioItem = (studio) => {
     proximityContainer.className = 'proximity-container';
 
     const walkIcon = document.createElement('img');
-    walkIcon.src = 'assets/one-man-walking.png';
+    walkIcon.src = 'https://pxba-px-mabe-dynamicsnapshots.s3.amazonaws.com/dynamic-test/assets/one-man-walking.png';
     walkIcon.className = 'walk-icon';
     proximityContainer.appendChild(walkIcon);
 
