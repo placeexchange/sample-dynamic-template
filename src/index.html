@@ -7,17 +7,9 @@
     </head>
     <body>
         <script id="conf">
-            // NOTE: this sample uses a {{ resp_b64 }} template variable to access lat/lon
-            // lat/lon variables can and should be directly accessed as follows:
-            // const LATITUDE = parseFloat("{{ lat }}") || 40.67567825655293
-            // const LONGITUDE = parseFloat("{{ lon }}") || -73.95655633519236;
-            let PX_AD_COPY = {};
-            try {
-                PX_AD_COPY = JSON.parse(atob("{{ resp_b64 }}"));
-            } catch { }
             const BASE_URL = 'https://sportplaces.api.decathlon.com';
-            const LATITUDE = PX_AD_COPY.lat || 40.67567825655293;
-            const LONGITUDE = PX_AD_COPY.lon || -73.95655633519236;
+            const LATITUDE = parseFloat("${lat}") || 40.67567825655293;
+            const LONGITUDE = parseFloat("${lon}") || -73.95655633519236;
             const RADIUS = 5  // search for yoga venues in a 1km radius from lat/lon
             const SPORTS = 292  // Decathlon's sport ID for yoga
             const LIMIT = 3 // max yoga studio records returned per call
