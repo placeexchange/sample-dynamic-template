@@ -8,8 +8,8 @@
     <body>
         <script id="conf">
             const BASE_URL = 'https://sportplaces.api.decathlon.com';
-            const LATITUDE = parseFloat("${lat}") || 40.67567825655293;
-            const LONGITUDE = parseFloat("${lon}") || -73.95655633519236;
+            const LATITUDE = parseFloat("$!{lat}") || 40.67567825655293;
+            const LONGITUDE = parseFloat("$!{lon}") || -73.95655633519236;
             const RADIUS = 5  // search for yoga venues in a 1km radius from lat/lon
             const SPORTS = 292  // Decathlon's sport ID for yoga
             const LIMIT = 3 // max yoga studio records returned per call

@@ -78,11 +78,11 @@ In order to use these template variables, please include the variables where you
 
 | Template Variable | Description | Type |
 ------------------- | ----------- | ---- |
-| {$lat} | The latitude of the publisher's device where the ad will be displayed. | number |
-| {$lon} | The longitude of the publisher's device where the ad will be displayed. | number |
-| {$region} | DMA region of the publisher's device where the ad will be displayed. | string |
-| ${dma_code} | DMA code of the publisher's device where the ad will be displayed. | number |
-| ${country} | Country of the publisher's device where the ad will be displayed. | string |
+| $!{lat} | The latitude of the publisher's device where the ad will be displayed. | number |
+| $!{lon} | The longitude of the publisher's device where the ad will be displayed. | number |
+| $!{region} | DMA region of the publisher's device where the ad will be displayed. | string |
+| $!{dma_code} | DMA code of the publisher's device where the ad will be displayed. | number |
+| $!{country} | Country of the publisher's device where the ad will be displayed. | string |
 
 Any template variables used must be part of this list. If any other variables are used or are spelled incorrectly, PX will not be able to replace the variable with desired data.
 
