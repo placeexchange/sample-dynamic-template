@@ -10,17 +10,19 @@ The sample template can render as follows; this specific sample template is curr
 
 # Contents
 
-1. [Template Overview](#template-overview)
-2. [Developing a Dynamic Template](#developing-a-dynamic-template)
-    1. [Template Limitations](#template-limitations)
-3. [Packaging a Dynamic Template](#packaging-a-dynamic-template)
-4. [Activating a Dynamic Template](#activating-a-dynamic-template)
-5. [Supported Template Variables](#supported-template-variables)
-    1. [Potential Future Template Variables](#potential-future-template-variables)
+- [sample-dynamic-template](#sample-dynamic-template)
+- [Contents](#contents)
+  - [Template Overview](#template-overview)
+  - [Developing a Dynamic Template](#developing-a-dynamic-template)
+    - [Template Limitations](#template-limitations)
+  - [Packaging a Dynamic Template](#packaging-a-dynamic-template)
+  - [Activating a Dynamic Template](#activating-a-dynamic-template)
+  - [Supported Template Variables](#supported-template-variables)
+    - [Potential Future Template Variables](#potential-future-template-variables)
 
 ## Template Overview
 
-The sample template is developed as HTML bundled with CSS/JS and assets, all viewable in the `src` directory.
+The sample template is developed as HTML bundled with CSS/JS and assets (however one needs to send index.html file to Place Exchange), all viewable in the `src` directory.
 * `src/index.html` is the HTML creative intended to be rendered and contains references to corresponding CSS/JS.
 * When fulfilling publisher requests, PX may render a snapshot of the HTML dynamic creative (as a JPEG) to be used in adserving, or the publisher can request the HTML directly and render the HTML on their screens.
 * These creatives can *optionally* utilize macros (template variables), for which PX can inject dynamic values when fulfilling requests. This allows the HTML creative to be enriched with contextual data before rendering; please see below for the full list of supported template variables. This sample creative uses renders based on injected `lat/lon` values.
@@ -41,7 +43,7 @@ If the template has external dependencies, PX recommends using default fallback 
 ### Template Limitations
 Please bear in mind the following limitations:
 
-* Snapshots of any dynamic templates will be rendered 500ms after the HTML begins loading. This means if the dynamic template has external dependencies (e.g. API calls to fetch content), the ***additional work must be completed within 500ms*** or else it may not be reflected in the rendered snapshot. We recommend templates load and render within <250ms, including calls to external APIs.
+* Snapshots of any dynamic templates will be rendered 1000ms after the HTML begins loading. This means if the dynamic template has external dependencies (e.g. API calls to fetch content), the ***additional work must be completed within 1000ms*** or else it may not be reflected in the rendered snapshot. We recommend templates load and render within <500ms, including calls to external APIs.
 * Snapshots may be cached and re-used for up to an hour (subject to change). This means a rendered snapshot may be close to *near*, but not, real-time - it may not be perfectly up-to-date to the minute/second.
 * Only the template variables explicitly denoted in this spec are supported for replacement.
 
@@ -55,6 +57,9 @@ An example .zip file may be packaged as follows:
 |--assets
 |   |--icon-1.png
 |   |--logo.png
+|   |--campaignFont.otf
+|   |--dynamic_creative.png
+|   |--fallback_creative.png
 |--index.html
 |--index.js
 |--styles.css
@@ -83,6 +88,8 @@ In order to use these template variables, please include the variables where you
 | $!{region} | DMA region of the publisher's device where the ad will be displayed. | string |
 | $!{dma_code} | DMA code of the publisher's device where the ad will be displayed. | number |
 | $!{country} | Country of the publisher's device where the ad will be displayed. | string |
+| $!{adunit_id} | Publisher's placeexchange device id will be displayed. | string|
+
 
 Any template variables used must be part of this list. If any other variables are used or are spelled incorrectly, PX will not be able to replace the variable with desired data.
 
