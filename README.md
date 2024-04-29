@@ -10,15 +10,13 @@ The sample template can render as follows; this specific sample template is curr
 
 # Contents
 
-- [sample-dynamic-template](#sample-dynamic-template)
-- [Contents](#contents)
-  - [Template Overview](#template-overview)
-  - [Developing a Dynamic Template](#developing-a-dynamic-template)
-    - [Template Limitations](#template-limitations)
-  - [Packaging a Dynamic Template](#packaging-a-dynamic-template)
-  - [Activating a Dynamic Template](#activating-a-dynamic-template)
-  - [Supported Template Variables](#supported-template-variables)
-    - [Potential Future Template Variables](#potential-future-template-variables)
+1. [Template Overview](#template-overview)
+2. [Developing a Dynamic Template](#developing-a-dynamic-template)
+    1. [Template Limitations](#template-limitations)
+3. [Packaging a Dynamic Template](#packaging-a-dynamic-template)
+4. [Activating a Dynamic Template](#activating-a-dynamic-template)
+5. [Supported Template Variables](#supported-template-variables)
+    1. [Potential Future Template Variables](#potential-future-template-variables)
 
 ## Template Overview
 
@@ -89,7 +87,6 @@ In order to use these template variables, please include the variables where you
 | $!{dma_code} | DMA code of the publisher's device where the ad will be displayed. | number |
 | $!{country} | Country of the publisher's device where the ad will be displayed. | string |
 | $!{adunit_id} | Publisher's placeexchange device id will be displayed. | string|
-
 
 Any template variables used must be part of this list. If any other variables are used or are spelled incorrectly, PX will not be able to replace the variable with desired data.
 
