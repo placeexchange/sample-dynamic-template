@@ -20,7 +20,7 @@ The sample template can render as follows; this specific sample template is curr
 
 ## Template Overview
 
-The sample template is developed as HTML bundled with CSS/JS and assets (however one needs to send index.html file to Place Exchange), all viewable in the `src` directory.
+The sample template is developed as HTML bundled with CSS/JS and assets, all viewable in the `src` directory.
 * `src/index.html` is the HTML creative intended to be rendered and contains references to corresponding CSS/JS.
 * When fulfilling publisher requests, PX may render a snapshot of the HTML dynamic creative (as a JPEG) to be used in adserving, or the publisher can request the HTML directly and render the HTML on their screens.
 * These creatives can *optionally* utilize macros (template variables), for which PX can inject dynamic values when fulfilling requests. This allows the HTML creative to be enriched with contextual data before rendering; please see below for the full list of supported template variables. This sample creative uses renders based on injected `lat/lon` values.
