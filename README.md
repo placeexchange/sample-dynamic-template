@@ -41,7 +41,7 @@ If the template has external dependencies, PX recommends using default fallback 
 ### Template Limitations
 Please bear in mind the following limitations:
 
-* Snapshots of any dynamic templates will be rendered 500ms after the HTML begins loading. This means if the dynamic template has external dependencies (e.g. API calls to fetch content), the ***additional work must be completed within 500ms*** or else it may not be reflected in the rendered snapshot. We recommend templates load and render within <250ms, including calls to external APIs.
+* Snapshots of any dynamic templates will be rendered 1000ms after the HTML begins loading. This means if the dynamic template has external dependencies (e.g. API calls to fetch content), the ***additional work must be completed within 1000ms*** or else it may not be reflected in the rendered snapshot. We recommend templates load and render within <500ms, including calls to external APIs.
 * Snapshots may be cached and re-used for up to an hour (subject to change). This means a rendered snapshot may be close to *near*, but not, real-time - it may not be perfectly up-to-date to the minute/second.
 * Only the template variables explicitly denoted in this spec are supported for replacement.
 
@@ -55,6 +55,9 @@ An example .zip file may be packaged as follows:
 |--assets
 |   |--icon-1.png
 |   |--logo.png
+|   |--campaignFont.otf
+|   |--dynamic_creative.png
+|   |--fallback_creative.png
 |--index.html
 |--index.js
 |--styles.css
@@ -83,6 +86,7 @@ In order to use these template variables, please include the variables where you
 | $!{region} | DMA region of the publisher's device where the ad will be displayed. | string |
 | $!{dma_code} | DMA code of the publisher's device where the ad will be displayed. | number |
 | $!{country} | Country of the publisher's device where the ad will be displayed. | string |
+| $!{adunit_id} | Publisher's placeexchange device id will be displayed. | string|
 
 Any template variables used must be part of this list. If any other variables are used or are spelled incorrectly, PX will not be able to replace the variable with desired data.
 
